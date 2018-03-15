@@ -41,6 +41,7 @@ func TestContainerMetricsTagging(t *testing.T) {
 			"docker.cpu.user",
 			"docker.cpu.usage",
 			"docker.cpu.throttled",
+			"docker.cpu.throttled_time_ns",
 			"docker.io.read_bytes",
 			"docker.io.write_bytes",
 			"docker.net.bytes_sent",
