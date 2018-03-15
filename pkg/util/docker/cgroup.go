@@ -283,6 +283,34 @@ func (c ContainerCgroup) CPUNrThrottled() (uint64, error) {
 	return 0, nil
 }
 
+// CPUThrottledTimeNs returns the total nanoseconds the cgroup has been
+// throttle/limited because of CPU quota / limit
+// If the cgroup file does not exist then we just log debug and return 0.
+func (c ContainerCgroup) CPUThrottledTimeNs() (uint64, error) {
+	statfile := c.cgroupFilePath("cpu", "cpu.stat")
+	f, err := os.Open(statfile)
+	if os.IsNotExist(err) {
+		log.Debugf("missing cgroup file: %s", statfile)
+		return 0, nil
+	} else if err != nil {
+		return 0, err
+	}
+	defer f.Close()
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		fields := strings.Split(scanner.Text(), " ")
+		if fields[0] == "throttled_time" {
+			value, err := strconv.ParseUint(fields[1], 10, 64)
+			if err != nil {
+				return 0, err
+			}
+			return value, nil
+		}
+	}
+	log.Debugf("missing throttled_time line in %s", statfile)
+	return 0, nil
+}
+
 // CPULimit would show CPU limit for this cgroup.
 // It does so by checking the cpu period and cpu quota config
 // if a user does this:

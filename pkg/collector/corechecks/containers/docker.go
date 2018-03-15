@@ -176,6 +176,7 @@ func (d *DockerCheck) Run() error {
 		sender.Rate("docker.cpu.user", float64(c.CPU.User), "", tags)
 		sender.Rate("docker.cpu.usage", c.CPU.UsageTotal, "", tags)
 		sender.Rate("docker.cpu.throttled", float64(c.CPUNrThrottled), "", tags)
+		sender.Rate("docker.cpu.throttled_time_ns", float64(c.CPUThrottledTimeNs), "", tags)
 		sender.Gauge("docker.mem.cache", float64(c.Memory.Cache), "", tags)
 		sender.Gauge("docker.mem.rss", float64(c.Memory.RSS), "", tags)
 		if c.Memory.SwapPresent == true {
