@@ -9,7 +9,7 @@ require (
 	github.com/DataDog/datadog-agent/pkg/util/scrubber v0.36.0-rc.2
 	github.com/cihub/seelog v0.0.0-20170130134532-f561c5e57575
 	github.com/stretchr/testify v1.7.1
-	go.uber.org/zap v1.20.0
+	go.uber.org/zap v1.21.0
 )
 
 require (
