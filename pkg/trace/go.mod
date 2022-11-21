@@ -30,7 +30,7 @@ require (
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
 	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 	google.golang.org/grpc v1.48.0
-	k8s.io/apimachinery v0.21.5
+	k8s.io/apimachinery v0.25.4
 )
 
 require (
@@ -53,7 +53,7 @@ require (
 	github.com/tklauser/numcpus v0.4.0 // indirect
 	github.com/vmihailenco/tagparser v0.1.1 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
-	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.5 // indirect
 	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa // indirect
