@@ -88,7 +88,7 @@ func TestFilter(t *testing.T) {
 			c: ctnDef{
 				ID:    "8",
 				Name:  "k8s_POD_kube-apiserver-node-name_kube-system_1ffeada3879805c883bb6d9ba7beca44_0",
-				Image: "k8s.gcr.io/pause-amd64:3.1",
+				Image: "registry.k8s.io/pause-amd64:3.1",
 			},
 			ns: "default",
 		},
@@ -355,13 +355,13 @@ func TestNewMetricFilterFromConfig(t *testing.T) {
 	assert.True(t, f.IsExcluded("dd-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.True(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.True(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.True(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 
 	config.Datadog.SetDefault("exclude_pause_container", false)
 	f, err = newMetricFilterFromConfig()
 	require.NoError(t, err)
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 
 	config.Datadog.SetDefault("exclude_pause_container", true)
 	config.Datadog.SetDefault("ac_include", []string{})
@@ -396,7 +396,7 @@ func TestNewAutodiscoveryFilter(t *testing.T) {
 	assert.True(t, f.IsExcluded("dd-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.False(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 	resetConfig()
 
@@ -413,7 +413,7 @@ func TestNewAutodiscoveryFilter(t *testing.T) {
 	assert.False(t, f.IsExcluded("dd/legacy-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.False(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 	resetConfig()
 
@@ -427,7 +427,7 @@ func TestNewAutodiscoveryFilter(t *testing.T) {
 	assert.True(t, f.IsExcluded("dd-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.False(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 	resetConfig()
 
@@ -441,7 +441,7 @@ func TestNewAutodiscoveryFilter(t *testing.T) {
 	assert.True(t, f.IsExcluded("dd-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.False(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 	resetConfig()
 
@@ -455,7 +455,7 @@ func TestNewAutodiscoveryFilter(t *testing.T) {
 	assert.True(t, f.IsExcluded("dd-152462", "dummy:latest", ""))
 	assert.False(t, f.IsExcluded("dd-152462", "apache:latest", ""))
 	assert.False(t, f.IsExcluded("dummy", "dummy", ""))
-	assert.False(t, f.IsExcluded("dummy", "k8s.gcr.io/pause-amd64:3.1", ""))
+	assert.False(t, f.IsExcluded("dummy", "registry.k8s.io/pause-amd64:3.1", ""))
 	assert.False(t, f.IsExcluded("dummy", "rancher/pause-amd64:3.1", ""))
 	fe := map[string]struct{}{
 		"Container filter \"invalid\" is unknown, ignoring it. The supported filters are 'image', 'name' and 'kube_namespace'": {},

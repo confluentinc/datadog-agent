@@ -31,12 +31,12 @@ const (
 	// - *.jfrog.io/google_containers/pause
 	pauseContainerGoogle = "image:google(_|-)containers/pause.*"
 
-	// - k8s.gcr.io/pause-amd64:3.1
+	// - registry.k8s.io/pause-amd64:3.1
 	// - asia.gcr.io/google_containers/pause-amd64:3.0
 	// - gcr.io/google_containers/pause-amd64:3.0
 	// - gcr.io/gke-release/pause-win:1.1.0
 	// - eu.gcr.io/k8s-artifacts-prod/pause:3.3
-	// - k8s.gcr.io/pause
+	// - registry.k8s.io/pause
 	pauseContainerGCR = `image:.*gcr\.io(.*)/pause.*`
 
 	// - k8s-gcrio.azureedge.net/pause-amd64

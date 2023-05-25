@@ -40,14 +40,14 @@ func TestIgnoreContainer(t *testing.T) {
 	}{
 		{
 			name:           "pause image",
-			imgName:        "k8s.gcr.io/pause",
+			imgName:        "registry.k8s.io/pause",
 			container:      &container,
 			isSandbox:      false,
 			expectsIgnored: true,
 		},
 		{
 			name:           "is sandbox",
-			imgName:        "k8s.gcr.io/pause",
+			imgName:        "registry.k8s.io/pause",
 			container:      &container,
 			isSandbox:      true,
 			expectsIgnored: true,
