@@ -12,7 +12,7 @@
         "resourceVersion": "175060842",
         "creationTimestamp": "2020-12-10T20:38:26Z",
         "annotations": {
-          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"pod-containercreating\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"k8s.gcr.io/test-webserver\",\"name\":\"test-container\",\"volumeMounts\":[{\"mountPath\":\"/test-ebs\",\"name\":\"test-volume\"}]}],\"restartPolicy\":\"Never\",\"volumes\":[{\"hostPath\":{\"path\":\"/invalid\",\"type\":\"Directory\"},\"name\":\"test-volume\"}]}}\n",
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"pod-containercreating\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"registry.k8s.io/test-webserver\",\"name\":\"test-container\",\"volumeMounts\":[{\"mountPath\":\"/test-ebs\",\"name\":\"test-volume\"}]}],\"restartPolicy\":\"Never\",\"volumes\":[{\"hostPath\":{\"path\":\"/invalid\",\"type\":\"Directory\"},\"name\":\"test-volume\"}]}}\n",
           "kubernetes.io/config.seen": "2020-12-10T20:38:26.836351897Z",
           "kubernetes.io/config.source": "api",
           "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container test-container"
@@ -38,7 +38,7 @@
         "containers": [
           {
             "name": "test-container",
-            "image": "k8s.gcr.io/test-webserver",
+            "image": "registry.k8s.io/test-webserver",
             "resources": {
               "requests": {
                 "cpu": "100m"
@@ -130,7 +130,7 @@
             "lastState": {},
             "ready": false,
             "restartCount": 0,
-            "image": "k8s.gcr.io/test-webserver",
+            "image": "registry.k8s.io/test-webserver",
             "imageID": ""
           }
         ],

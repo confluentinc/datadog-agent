@@ -516,7 +516,7 @@
           "containers": [
             {
               "name": "kube-proxy",
-              "image": "k8s.gcr.io/kube-proxy:v1.12.9-gke.7",
+              "image": "registry.k8s.io/kube-proxy:v1.12.9-gke.7",
               "command": [
                 "/bin/sh",
                 "-c",
@@ -876,7 +876,7 @@
           "containers": [
             {
               "name": "event-exporter",
-              "image": "k8s.gcr.io/event-exporter:v0.2.4",
+              "image": "registry.k8s.io/event-exporter:v0.2.4",
               "command": [
                 "/event-exporter",
                 "-sink-opts=-stackdriver-resource-model=old"
@@ -895,7 +895,7 @@
             },
             {
               "name": "prometheus-to-sd-exporter",
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.0",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.0",
               "command": [
                 "/monitor",
                 "--stackdriver-prefix=container.googleapis.com/internal/addons",
@@ -1003,8 +1003,8 @@
               "lastState": {},
               "ready": true,
               "restartCount": 0,
-              "image": "k8s.gcr.io/event-exporter:v0.2.4",
-              "imageID": "docker-pullable://k8s.gcr.io/event-exporter@sha256:16ca66e2b5dc7a1ce6a5aafcb21d0885828b75cdfc08135430480f7ad2364adc",
+              "image": "registry.k8s.io/event-exporter:v0.2.4",
+              "imageID": "docker-pullable://registry.k8s.io/event-exporter@sha256:16ca66e2b5dc7a1ce6a5aafcb21d0885828b75cdfc08135430480f7ad2364adc",
               "containerID": "docker://a77b27452918c517a85ebf658002d4654b413b10c70ba03f3573f2872442ea20"
             },
             {
@@ -1017,8 +1017,8 @@
               "lastState": {},
               "ready": true,
               "restartCount": 0,
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.0",
-              "imageID": "docker-pullable://k8s.gcr.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.0",
+              "imageID": "docker-pullable://registry.k8s.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e",
               "containerID": "docker://5685115469ca142c6d3579b43711f76586478a613295d0471da895e9efcd5b70"
             }
           ],
@@ -1068,7 +1068,7 @@
           "containers": [
             {
               "name": "default-http-backend",
-              "image": "k8s.gcr.io/defaultbackend-amd64:1.5",
+              "image": "registry.k8s.io/defaultbackend-amd64:1.5",
               "ports": [
                 {
                   "containerPort": 8080,
@@ -1175,8 +1175,8 @@
               "lastState": {},
               "ready": true,
               "restartCount": 0,
-              "image": "k8s.gcr.io/defaultbackend-amd64:1.5",
-              "imageID": "docker-pullable://k8s.gcr.io/defaultbackend-amd64@sha256:4dc5e07c8ca4e23bddb3153737d7b8c556e5fb2f29c4558b7cd6e6df99c512c7",
+              "image": "registry.k8s.io/defaultbackend-amd64:1.5",
+              "imageID": "docker-pullable://registry.k8s.io/defaultbackend-amd64@sha256:4dc5e07c8ca4e23bddb3153737d7b8c556e5fb2f29c4558b7cd6e6df99c512c7",
               "containerID": "docker://13b3c873935c877d9cf5a9ab1b28bc6e598795171b1a2246a785c568ae6fcc56"
             }
           ],
@@ -1315,7 +1315,7 @@
             },
             {
               "name": "prometheus-to-sd-exporter",
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.0",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.0",
               "command": [
                 "/monitor",
                 "--stackdriver-prefix=container.googleapis.com/internal/addons",
@@ -1487,8 +1487,8 @@
               "lastState": {},
               "ready": true,
               "restartCount": 0,
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.0",
-              "imageID": "docker-pullable://k8s.gcr.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.0",
+              "imageID": "docker-pullable://registry.k8s.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e",
               "containerID": "docker://c2530686352f6d2baa536c27ecf4741e8198735397a76f4ff919967becb21248"
             }
           ],
@@ -1537,7 +1537,7 @@
           "containers": [
             {
               "name": "prometheus-to-sd",
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.2",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.2",
               "command": [
                 "/monitor",
                 "--source=kube-proxy:http://localhost:10249?whitelisted=sync_proxy_rules_latency_microseconds&metricsPrefix=container.googleapis.com/internal/addons",
@@ -1679,8 +1679,8 @@
               "lastState": {},
               "ready": true,
               "restartCount": 0,
-              "image": "k8s.gcr.io/prometheus-to-sd:v0.5.2",
-              "imageID": "docker-pullable://k8s.gcr.io/prometheus-to-sd@sha256:916d01e197885450ca45447f1c8a9cbc04d30c93d5382461eb202dcbf2b8d0b0",
+              "image": "registry.k8s.io/prometheus-to-sd:v0.5.2",
+              "imageID": "docker-pullable://registry.k8s.io/prometheus-to-sd@sha256:916d01e197885450ca45447f1c8a9cbc04d30c93d5382461eb202dcbf2b8d0b0",
               "containerID": "docker://412a4f5670f8c778159e6b08b26d6076bae84b4fb7d0567acb9acf3400b23868"
             }
           ],
