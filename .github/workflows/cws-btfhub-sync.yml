@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout datadog-agent repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
 
       - name: Checkout btfhub-archive repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: aquasecurity/btfhub-archive
           path: dev/dist/archive
